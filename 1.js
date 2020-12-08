@@ -14,3 +14,20 @@ var twoSum = function(nums, target) {
     }
     return [];
 };
+
+/**
+ * better solution for 2
+ * nums = [2, 7, 11, 15], target = 9
+ * got: { 7: 0 }, that means when you get a seven, map.get(0) would match
+ * the answer since the key is the target left for the value (index of nums)
+ */
+var twoSum = function(nums, target) {
+    const numMap = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        if (numMap.has(nums[i])) {
+            return [numMap.get(nums[i]), i];
+        }
+        numMap.set(target - nums[i], i);
+    }
+    return [];
+};
