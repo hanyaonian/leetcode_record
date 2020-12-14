@@ -23,12 +23,12 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var threeSum = function(nums) {
+var threeSum = function (nums) {
     let ans = [];
     nums.sort((pre, next)=> pre - next);
     for (let i = 0; i < nums.length; i++) {
         //i 左指针， tail 右指针， head 中间指针
-        if (i > 0 && nums[i] === nums[i-1]) {
+        if (i > 0 && nums[i] === nums[i - 1]) {
             continue;
         }
         if (nums[i] > 0) {

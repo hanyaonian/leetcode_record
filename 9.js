@@ -4,7 +4,7 @@
  * @param {number} x
  * @return {boolean}
  */
-var isPalindrome = function(x) {
+var isPalindrome = function (x) {
     let numString = x.toString();
     let mid = parseInt(numString.length / 2);
     let left = numString.length % 2 === 0 ? mid - 1 : mid;
