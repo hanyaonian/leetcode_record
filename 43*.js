@@ -42,7 +42,7 @@ var multiply = function(num1, num2) {
         for (let j = l2; j--; j > 0) {
             let tmp = num1[i] * num2[j] + p[i + j + 1]
             p[i + j + 1] = tmp % 10
-            p[i + j] += 0 | tmp / 10
+            p[i + j] += parseInt(tmp / 10)
         } 
     }
     while(p[0] === 0) {
