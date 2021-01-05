@@ -17,16 +17,9 @@
  * @param {TreeNode} root
  * @return {number}
  */
-const finder = (root) => {
-    if (root === null) {
-        return 0;
-    }
-    return 1 + Math.max(finder(root.left), finder(root.right))
-}
-
 var maxDepth = function(root) {
     if (root === null) {
         return 0;
     }
-    return finder(root);
+    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right))
 };
