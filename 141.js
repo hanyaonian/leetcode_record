@@ -25,7 +25,7 @@ var hasCycle = function(head) {
     if (!head) {
         return false
 	}
-	let fast = head, slow = head;
+	let fast = head.next, slow = head;
 	while (slow != fast) {
 		//有尽头
         if (!fast || !fast.next) {
