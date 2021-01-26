@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@koa/multer": "^3.0.0",
-    "@types/koa__multer": "^2.0.2"
-  }
-}
