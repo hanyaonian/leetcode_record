@@ -6,6 +6,9 @@
  * @return {boolean}
  */
 var isPowerOfTwo = function(n) {
+    if ( n === 0) {
+        return false;
+    }
     while (Number.isInteger(n / 2)) {
         n = n / 2;
     }
