@@ -18,11 +18,11 @@ var numSimilarGroups = function(strs) {
         matrix.push(i);
     }
     const findPoint = (x) => {
-        if (matrix[x] === x) {
-            return x; //自连
-        } else {
-            matrix[x] = findPoint(matrix[x]); // 两点互联，用来做组的自连
-            return findPoint(matrix[x])
+        if (matrix[x] === x) {//自连
+            return x; 
+        } else { // 另一个点
+            matrix[x] = findPoint(matrix[x]);
+            return findPoint(matrix[x]) //链接另一个点所属的点，共一个组
         }
     }
     for (let i = 0; i < strs.length; i++) {
