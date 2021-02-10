@@ -1,28 +1,20 @@
-
 /**
  * 
-	给定一个 没有重复 数字的序列，返回其所有可能的全排列。
+ * 给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
+示例 1：
 
-	示例:
+输入：nums = [1,1,2]
+输出：
+[[1,1,2],
+ [1,2,1],
+ [2,1,1]]
+示例 2：
 
-	输入: [1,2,3]
-	输出:
-	[
-	[1,2,3],
-	[1,3,2],
-	[2,1,3],
-	[2,3,1],
-	[3,1,2],
-	[3,2,1]
-	]
+输入：nums = [1,2,3]
+输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 
-	来源：力扣（LeetCode）
-	链接：https://leetcode-cn.com/problems/permutations
-	著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-	
- *  回溯法。类似树形展开分开计算的思路
- */
-/**
+因为是有重复可能的，因此加入一个标记数组用于记录。
+
  * @param {number[]} nums 数字 
  * @param {boolean[]} mark 记录同位置数字是否使用
  * @param {number[][]} ans 答案记录
@@ -34,7 +26,6 @@ function backTracking(nums, ans, current) {
         ans.push([...current]);
         return;
     }
-    // 优化：因为无重复，所以用index来找寻对应目标。无需多余内存进行标记
     for (let i = 0; i < nums.length; i++) {
         if (current.indexOf(nums[i]) === -1) {
             current.push(nums[i]);
@@ -47,8 +38,17 @@ function backTracking(nums, ans, current) {
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function(nums) {
+var permuteUnique = function(nums) {
+    const unUniqueans = [];
     const ans = [];
-    backTracking(nums, ans, []);
+    const ansSet = new Set();
+    backTracking(nums, unUniqueans, []);
+    unUniqueans.forEach(val => {
+        const joinVal = val.join('');
+        if (!ansSet.has(joinVal)) {
+            ans.push(val);
+            ansSet.add(joinVal);
+        }
+    })
     return ans;
 };
