@@ -11,9 +11,7 @@
 
 	给定的 n 保证是有效的。
 
-	来源：力扣（LeetCode）
-	链接：https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list
-	著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    解法：这题取巧了。扔到数组里去处理了。实际上可以获取到链表长度再找的
  * 
  * Definition for singly-linked list.
  * function ListNode(val, next) {
