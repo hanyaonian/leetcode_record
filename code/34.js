@@ -17,6 +17,8 @@ const findIndex = (nums, target, findLeft) => {
         if (nums[mid] === target) {
             ans = mid;
             // find most left of most right
+            // 连续相同的时候，就是这么处理：找到值之后根据
+            // 找最左/最右去调整左右指针
             if (findLeft) {
                 right = mid - 1;
             } else {
