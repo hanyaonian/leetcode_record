@@ -8,7 +8,7 @@
  * @param {string} digits
  * @return {string[]}
  */
-var letterCombinations = function(digits) {
+let letterCombinations = function(digits) {
     const ans = [];
     const keyMap = {
         '2': 'abc',
